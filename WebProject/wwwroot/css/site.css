@@ -1,0 +1,158 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+.main_image {
+    height: 100px;
+    max-width: 2700px;
+    margin-left:555px;
+}
+body {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(16, 66, 241, 0.98) 74%, rgba(23, 23, 23, 0.81) 100%);
+}
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.Name_Shop {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 77px;
+    color: #00F0FF;
+    grid-area:header;
+    text-decoration:none ;
+}
+.copyright_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 77px;
+    text-decoration: none;
+}
+.Footer_ShopName {
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: 35px;
+}
+.About {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+About > label {
+    font-size: 32px;
+}
+.footer
+{
+    display: flex;
+    flex-direction: row;
+}
+.main_container {
+    background-color: white;
+    border: 1px;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 200px;
+    padding: 20px;
+}
+.Div_EventProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.EventProduct {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+    padding-top: 10px;
+}
+.Line {
+    height: 0px;
+    border: 1px solid #000000;
+    transform: rotate(0.21deg);
+}
+.Cart_Label {
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.Cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.Cart_Item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Item_Img {
+    width: 10%;
+}
+.Product {
+    display: flex;
+    flex-direction: row;
+}
+
+.Name_Cost {
+    display: flex;
+    flex-direction: column;
+}
+
+.Product_Image {
+    float: left;
+}
+
+.Product_Cost {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 58px;
+    color: #000000;
+    padding-left: 220px;
+}
+
+.Name_Product {
+    padding-right: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 58px;
+    color: #000000;
+}
+.Count {
+    width: 5%;
+}
+
+.Size {
+    width: 10%;
+}
+
+.Buy_button {
+    margin-left: 100px;
+}
+allitems_background {
+    /*Поменять название картинки*/
+    background-image: url('../img/image 25.png');
+}
