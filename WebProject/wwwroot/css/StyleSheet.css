@@ -1,0 +1,124 @@
+﻿body {
+    background-image: url('/img/AllItems_Background.png');
+    background-size :100%;
+    background-repeat:no-repeat;
+}
+.Main_Div {
+    display: flex;
+    flex-direction:row;
+}
+.Left_Div {
+    display: flex;
+    flex-direction: column;
+    background-color: #28A9C6;
+    margin-top: 130px;
+    height: 750px;
+}
+.Name_Items > label {
+    font-size: 28px;
+    font-family:initial;
+}
+.Mousepad_items {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    width: 250px;
+    height:100%;
+    gap:5px;
+}
+.Mousepad_items > img {
+    width: 100px;
+    height: 70px;
+ }
+.Name_Items {
+    display:flex;
+    flex-direction:row;
+    gap:150px;
+}
+.Left_items
+{
+    display:flex;
+    flex-direction:row;
+}
+.Poster_Items {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap:5px;
+}
+.Poster_Items > img {
+  width: 190px;
+  height: 90px;
+}
+.Aghanim {
+    margin-top: 200px;
+    width:90px;
+}
+.Right_Div {
+    display: flex;
+    flex-direction: column;
+    background-color: #28A9C6;
+    margin-top: 130px;
+    margin-left:500px;
+    height: 750px;   
+}
+.Right_Div > label {
+    font-size: 28px;
+    font-family: initial;
+}
+    .Right_name > label {
+        font-size: 28px;
+        font-family: initial;
+        
+    }
+.Right_name {
+    display: flex;
+    flex-direction: row;
+    gap: 125px;
+}
+.Main_Name {
+    align-content:center;
+    justify-content:center;
+}
+.Shirt {
+    display: flex;
+    flex-direction: column;
+}
+    .Shirt > img {
+        width: 200px;
+        height: 90px;
+    }
+.Sweater {
+    display:flex;
+    flex-direction:column;
+}
+    .Sweater > img {
+        width: 200px;
+        height: 90px;
+    }
+.T-Shirt {
+    display:flex;
+    flex-direction:column;
+}
+    .T-Shirt > img {
+        width: 200px;
+        height: 90px;
+    }
+.Right_Items {
+    display: flex;
+    flex-direction: row;
+}
+.Other{
+    margin-left:250px;
+}
+.Other_Div{
+    display:flex;
+    flex-direction:row;
+}
+.Other_Div >img{
+    width:200px;
+    height:90px;
+}
