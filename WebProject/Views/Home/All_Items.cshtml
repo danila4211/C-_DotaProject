@@ -1,5 +1,4 @@
-﻿@page
-@model WebProject.Views.Home.All_ItemsModel
+﻿@model WebProject.Models.MainContext
 @{
     Layout = null;
 }
@@ -15,53 +14,64 @@
             </div>
             <div class="Left_items">
             <div class="Mousepad_items">
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-                <img src="/img/ChibiMirana_mousepad.png" />
-            </div>
+              @foreach(var product in Model.Products)
+                    {
+                        if (product.Name.Contains("Mousepad"))
+                        {
+                        <form method="post">
+                                <input class="AllItems_Image" type="image" src="\@product.Image">
+                                <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                        </form>    
+                        }
+                    }
+                </div>
             <div class="Poster_Items">
-                <img src="~/img/AllHero_Poster.png" />
-                <img src="~/img/AllHero_Poster.png" />
-                <img src="~/img/AllHero_Poster.png" />
-                <img src="~/img/AllHero_Poster.png" />
-                <img src="~/img/AllHero_Poster.png" />
-                <img src="~/img/AllHero_Poster.png" />
-                <img src="~/img/AllHero_Poster.png" />
-            </div>  
-
+                    @foreach (var product in Model.Products)
+                    {
+                        if (product.Name.Contains("Poster"))
+                        {
+                            <form method="post">
+                                <input class="AllItems_Image" type="image" src="\@product.Image">
+                                <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                            </form>
+                        }
+                    }
             </div>
+        </div>  
         </div>
         <div class="Right_Div">
             <label class="Main_Name">Одежда</label>
             <div class="Right_name">
-                <label>Рубашка</label>
                 <label>Свитер</label>
-                <label>Футболка</label>
+                <label>Худи</label>
             </div>
             <div class="Right_Items">
-            <div class="Shirt">
-                <img src="~/img/PlushPudge_Hoody.png"/>
-                <img src="~/img/PlushPudge_Hoody.png"/>
-                <img src="~/img/PlushPudge_Hoody.png"/>
-                <img src="~/img/PlushPudge_Tshirt.png"/>
-            </div>
+            
             <div class="Sweater">
-                <img src="~/img/PlushPudge_Tshirt.png" />
-                <img src="~/img/PlushPudge_Tshirt.png" />
-                <img src="~/img/PlushPudge_Tshirt.png" />
-                <img src="~/img/PlushPudge_Tshirt.png" />
+                            @foreach (var product in Model.Products)
+                            {
+                                if (product.Name.Contains("Sweatshirt"))
+                                {
+                                    <form method="post">
+                                        <input class="AllItems_Image" type="image" src="\@product.Image">
+                                        <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                                    </form>
+                                }
+                            }
             </div>
             <div class="T-Shirt">
-                <img src="~/img/PlushPudge_Tshirt.png" />
-                <img src="~/img/PlushPudge_Tshirt.png" />
-                <img src="~/img/PlushPudge_Tshirt.png" />
-                <img src="~/img/PlushPudge_Tshirt.png" />
-            </div>
-        </div>
+                            @foreach (var product in Model.Products)
+                            {
+                                if (product.Name.Contains("Hoodie"))
+                                {
+                                    <form method="post">
+                                        <input class="AllItems_Image" type="image" src="\@product.Image">
+                                <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                                    </form>
+                                }
+                            }
+             </div>
+         </div>
+       </div>
     </div>
 </body>

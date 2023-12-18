@@ -1,24 +1,38 @@
-﻿@page
-@model WebProject.Views.Home.CartModel
+﻿@model WebProject.Models.MainContext
+
 @{
-    Layout = "/Views/Shared/_Layout.cshtml";
+    //Layout = "/Views/Shared/_Layout.cshtml";
+
 }
 <div class="main_container">
     <div class="Line"></div>
     <div>
         <div id="CART_PART">
             <div class="Cart">
-                <div class="Cart_Item">
-                    <img class="Item_Img" src="\img\PlushPudge_mousepad.png" alt="image">
-                    <label class="Item_Name">Test</label>
-                    <label class="Item_Cost">Test</label>
-                    <label class="Item_Count">Test</label>
-                </div>
+                @{
+                    decimal summ = 0;
+                    var carts = Model.Carts.ToList();
+                   
+                }
+                @foreach (var cart in carts)
+                {
+                    <div class="Cart_Item">
+                        @{
+                            Product product = Model.Products.First(x => x.Id == cart.ProductID);
+                        }
+                        <img class="Item_Img" src="\@product.Image" alt="image">
+                        <label class="Item_Name">@product.Name</label>
+                        <label class="Item_Cost">@product.Cost₽</label>
+                    </div>
+                }
             </div>
         </div>
         <div id="BUTTONS_PART" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <button class="Buy_Button">КУПИТЬ</button>
-            <h1>Всего: NULL</h1>
+            @* <button class="Buy_Button">КУПИТЬ</button> *@
+            <form method="post">
+            <input type="button" class="Buy_button" value="Купить"/>
+            <h1>Всего: @summ</h1>
+            </form>
         </div>
     </div>
 </div>

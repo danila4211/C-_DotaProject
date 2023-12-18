@@ -1,26 +1,31 @@
-﻿@page
-@model WebProject.Views.Home.ProductModel
+﻿@model WebProject.Models.Product
+
 @{
 }
-<div class="main_container">
+<div class="main_container_Product">
     <div class="Product">
-        <img class="Product_Image" src="\img\Poster BeastMaster.png" />
-        <div class="Name_Cost">
-            <label class="Name_Product">Футболка Мякгий пудж</label>
-            <label class="Product_Cost">100 Руб</label>
-            <label class="About">Описание</label>
-            <label>Размер</label>
-            <select class="Size" name="Size">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
-            <label> Кол-во</label>
-            <div class="Buy_Count">
-                <input class="Count" type="text" />
-                <button class="Buy_button">Добавить в корзину</button>
+        <form method="post">
+            <img class="Product_Image" src="/@Model.Image" />
+            <div class="Name_Cost">
+                <label class="Name_Product">@Model.Name</label>
+                <label class="Product_Cost">@Model.Cost ₽</label>
+                <label class="About">@Model.Description</label>
+                <label>Размер</label>
+
+                <select class="Size" name="Size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <label> Кол-во: @Model.Count</label>
+                <div class="Buy_Count">
+                    <input class="Count" type="text"/>
+                    <input name="productId" hidden class="form-control form-control-sm" value="@Model.Id" type="text" />
+                    <input type="submit" class="Buy_button" value="Добавить в корзину">
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>

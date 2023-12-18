@@ -28,14 +28,15 @@
     height:100%;
     gap:5px;
 }
-.Mousepad_items > img {
-    width: 100px;
-    height: 70px;
- }
+.AllItems_Image
+{
+    width:200px;
+    height:90px;
+}
 .Name_Items {
-    display:flex;
-    flex-direction:row;
-    gap:150px;
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
 }
 .Left_items
 {
@@ -49,7 +50,7 @@
     flex-wrap: wrap;
     gap:5px;
 }
-.Poster_Items > img {
+.Poster_Items > input {
   width: 190px;
   height: 90px;
 }

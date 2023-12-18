@@ -72,6 +72,15 @@ About > label {
     margin: 0px 200px;
     padding: 20px;
 }
+.main_container_Product {
+    background-color: white;
+    border: 1px;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 38px;
+    padding: 20px;
+}
 .Div_EventProduct {
     display: flex;
     flex-direction: row;
@@ -80,10 +89,13 @@ About > label {
 .EventProduct {
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 240px;
     width: 200px;
     padding-top: 10px;
 }
+    .EventProduct > image {
+        width: 50%;
+    }
 .Line {
     height: 0px;
     border: 1px solid #000000;
@@ -129,7 +141,7 @@ About > label {
     font-size: 32px;
     line-height: 58px;
     color: #000000;
-    padding-left: 220px;
+    padding-left: 13px;
 }
 
 .Name_Product {

@@ -1,19 +1,110 @@
-﻿@{
+﻿@model WebProject.Models.MainContext
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <img class="main_image" src="img\Scepter.png" alt="image">
-<div class="main_container">
-    <img class="image" src="img\Event_Accisoiur.png" alt="image">
-   <div class="Div_EventProduct">
-     <a asp-action="Product" asp-controller="Home">
-     <div class="EventProduct">
-        <img src="img\Big_Poster.png" alt="image">
-        <label class="Cost">Цена: 100Rub</label>
+<div class="main_container">  
+     <img class="image" src="img\PlushPudge_Collection.png" alt="image">
+    <div class="Div_EventProduct">
+        @foreach(var product in Model.Products)
+        {
+                if (product.Name.Contains("Pudge"))
+                {
+                    <form method="post">
+                        <div class="EventProduct">
+                             <input  type="image" src="@product.Image">
+                             <label  class="Cost">Цена:@product.Cost</label>
+                             <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                         </div>
+                </form>
+                }
+        }
      </div>
-     </a>
+    <img class="image" src="img\Vengeful_Spirit.png" alt="image">
+    <div class="Div_EventProduct">
+        @foreach (var product in Model.Products)
+        {
+            if (product.Name.Contains("Venga"))
+            {
+                <form method="post">
+                    <div class="EventProduct">
+                        <input type="image" src="@product.Image">
+                        <label class="Cost">Цена:@product.Cost</label>
+                        <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                    </div>
+                </form>
+            }
+        }
+    </div>
+    <img class="image" src="img\_Queen_of_Pain.png" alt="image">
+    <div class="Div_EventProduct">
+        @foreach (var product in Model.Products)
+        {
+            if (product.Name.Contains("Qop"))
+            {
+                <form method="post">
+                    <div class="EventProduct">
+                        <input type="image" src="@product.Image">
+                        <label class="Cost">Цена:@product.Cost</label>
+                        <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                    </div>
+                </form>
+            }
+        }
+    </div>
+    <img class="image" src="img\Chibi_Mirana.png" alt="image">
+    <div class="Div_EventProduct">
+        @foreach (var product in Model.Products)
+        {
+            if (product.Name.Contains("Chibi"))
+            {
+                <form method="post">
+                    <div class="EventProduct">
+                        <input type="image" src="@product.Image">
+                        <label class="Cost">Цена:@product.Cost</label>
+                        <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                    </div>
+                </form>
+            }
+        }
+    </div>
+    <img class="image" src="img\Tidehunter.png" alt="image">
+    <div class="Div_EventProduct">
+        @foreach (var product in Model.Products)
+        {
+            if (product.Name.Contains("Melon"))
+            {
+                <form method="post">
+                    <div class="EventProduct">
+                        <input type="image" src="@product.Image">
+                        <label class="Cost">Цена:@product.Cost</label>
+                        <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                    </div>
+                </form>
+            }
+        }
+    </div>
+    <img class="image" src="img\Legion_Commander.png" alt="image">
+    <div class="Div_EventProduct">
+        @foreach (var product in Model.Products)
+        {
+            if (product.Name.Contains("LC_"))
+            {
+                <form method="post">
+                    <div class="EventProduct">
+                        <input type="image" src="@product.Image">
+                        <label class="Cost">Цена:@product.Cost</label>
+                        <input name="productName" hidden class="form-control form-control-sm" value="@product.Name" type="text" />
+                    </div>
+                </form>
+            }
+        }
+    </div>
+    @*
         <a href="">
             <div class="EventProduct">
-                <img src="img\Big_Poster.png" alt="image">
+                <img src="@Model.Products.ToList()[1].Image" alt="image">
                 <label class="Cost">Цена: 100Rub</label>
             </div>
         </a>
@@ -57,31 +148,5 @@
             </div>
         </a>
     </div>
-    <img class="image" src="img\Event_Accisoiur.png" alt="image">
-    <div class="Div_EventProduct">
-        <a href="">
-            <div class="EventProduct">
-                <img src="img\Big_Poster.png" alt="image">
-                <label class="Cost">Цена: 100Rub</label>
-            </div>
-        </a>
-        <a href="">
-            <div class="EventProduct">
-                <img src="img\Big_Poster.png" alt="image">
-                <label class="Cost">Цена: 100Rub</label>
-            </div>
-        </a>
-        <a href="">
-            <div class="EventProduct">
-                <img src="img\Big_Poster.png" alt="image">
-                <label class="Cost">Цена: 100Rub</label>
-            </div>
-        </a>
-        <a href="">
-            <div class="EventProduct">
-                <img src="img\Big_Poster.png" alt="image">
-                <label class="Cost">Цена: 100Rub</label>
-            </div>
-        </a>
-    </div>
+    *@
 </div>
