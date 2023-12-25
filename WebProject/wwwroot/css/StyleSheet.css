@@ -1,7 +1,6 @@
 ﻿body {
     background-image: url('/img/AllItems_Background.png');
-    background-size :100%;
-    background-repeat:no-repeat;
+    background-size :cover;
 }
 .Main_Div {
     display: flex;
@@ -12,7 +11,7 @@
     flex-direction: column;
     background-color: #28A9C6;
     margin-top: 130px;
-    height: 750px;
+    border-radius: 15px 15px 0px 0px;
 }
 .Name_Items > label {
     font-size: 28px;
@@ -28,10 +27,9 @@
     height:100%;
     gap:5px;
 }
-.AllItems_Image
-{
-    width:200px;
-    height:90px;
+.AllItems_Image {
+    width: 200px;
+    height: 148px;
 }
 .Name_Items {
     display: flex;
@@ -63,8 +61,8 @@
     flex-direction: column;
     background-color: #28A9C6;
     margin-top: 130px;
-    margin-left:500px;
-    height: 750px;   
+    margin-left: 500px;
+    border-radius: 15px 15px 0px 0px;
 }
 .Right_Div > label {
     font-size: 28px;

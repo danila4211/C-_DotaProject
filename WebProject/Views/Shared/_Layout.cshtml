@@ -27,6 +27,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Cart">Корзина</a>
                         </li>
+                        @if (Program.ThisUser != null)
+                        {
+                            <li class="sign_in"> 
+                                <img class="sign_ico" src="~/img/User.png">
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="sign_in">
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Autorization">Войти</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -34,6 +46,24 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+
+            <div id="Success" class="modal fade text-width:30%;" role="dialog">
+                <div class="model-content">
+                    <div class="model-header">
+                        <h2>Спасибо за покупку</h2>
+                        <button type="button" class="btn-close" data-dismiss="modal">Удачного дня</button>
+                    </div>
+                    <div id="SuccesseBody" class="modal-body alert alert-success">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+
+
+
             @RenderBody()
         </main>
     </div>

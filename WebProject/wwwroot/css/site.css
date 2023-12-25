@@ -161,6 +161,27 @@ About > label {
     width: 10%;
 }
 
-.Buy_button {
-    margin-left: 100px;
+.Country {
+    width: 100%;
 }
+.sign_in {
+    margin-left:1350px;
+}
+.sign_ico {
+    height:50px;
+}
+.PostCart {
+    margin-left: 600px;
+}
+.RegAuthorizathion {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .RegAuthorizathion > input {
+        margin-top: 50px;
+        text-align: center;
+        width: 250px;
+    }

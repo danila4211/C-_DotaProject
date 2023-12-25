@@ -9,14 +9,21 @@ namespace WebProject.Models
 {
     public class MainContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Product { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public MainContext(DbContextOptions options) : base(options)
         {
-            
         }
 
+        public void ClearCart()
+        {
+            foreach (var entity in Carts)
+                Carts.Remove(entity);
+
+            SaveChanges();
+        }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    Product que = new Product()

@@ -10,15 +10,15 @@
         <div id="CART_PART">
             <div class="Cart">
                 @{
-                    decimal summ = 0;
+                    decimal sum = 0;
                     var carts = Model.Carts.ToList();
-                   
                 }
                 @foreach (var cart in carts)
                 {
                     <div class="Cart_Item">
                         @{
-                            Product product = Model.Products.First(x => x.Id == cart.ProductID);
+                            Product product = Model.Product.First(x => x.Id == cart.ProductId);
+                            sum += product.Cost;
                         }
                         <img class="Item_Img" src="\@product.Image" alt="image">
                         <label class="Item_Name">@product.Name</label>
@@ -27,12 +27,23 @@
                 }
             </div>
         </div>
+        <div class="PostCart">
+            <select class="Country" name="Country">
+                <option value="Germany">Германия</option>
+                <option value="Kingdom">Соединенное королевство</option>
+                <option value="USA">Соединенные штаты америки</option>
+                <option value="Chehia">Чехия</option>
+                <option value="Kazahstan">Казахстан</option>
+                <option value="Russia">Россия</option>
+            </select>
+            <input type="text" value="Post Code"/>
+        </div>
         <div id="BUTTONS_PART" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            @* <button class="Buy_Button">КУПИТЬ</button> *@
-            <form method="post">
-            <input type="button" class="Buy_button" value="Купить"/>
-            <h1>Всего: @summ</h1>
+            <h1>Всего: @sum</h1>
+            <form asp-action="Buy">
+                <input type="submit" value="КУПИТЬ!!!"/>
             </form>
         </div>
     </div>
 </div>
+

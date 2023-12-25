@@ -29,12 +29,12 @@ namespace WebProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("ProductID")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductID");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Carts");
                 });
@@ -66,14 +66,35 @@ namespace WebProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("WebProject.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("WebProject.Models.Cart", b =>
                 {
                     b.HasOne("WebProject.Models.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductID")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

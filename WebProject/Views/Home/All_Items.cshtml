@@ -14,7 +14,7 @@
             </div>
             <div class="Left_items">
             <div class="Mousepad_items">
-              @foreach(var product in Model.Products)
+              @foreach(var product in Model.Product)
                     {
                         if (product.Name.Contains("Mousepad"))
                         {
@@ -26,8 +26,9 @@
                     }
                 </div>
             <div class="Poster_Items">
-                    @foreach (var product in Model.Products)
+                    @foreach (var product in Model.Product)
                     {
+
                         if (product.Name.Contains("Poster"))
                         {
                             <form method="post">
@@ -48,7 +49,7 @@
             <div class="Right_Items">
             
             <div class="Sweater">
-                            @foreach (var product in Model.Products)
+                            @foreach (var product in Model.Product)
                             {
                                 if (product.Name.Contains("Sweatshirt"))
                                 {
@@ -60,7 +61,7 @@
                             }
             </div>
             <div class="T-Shirt">
-                            @foreach (var product in Model.Products)
+                            @foreach (var product in Model.Product)
                             {
                                 if (product.Name.Contains("Hoodie"))
                                 {

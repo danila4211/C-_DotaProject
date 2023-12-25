@@ -1,34 +1,44 @@
 using Microsoft.EntityFrameworkCore;
 
 using WebProject.Models;
-
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-string connections = builder.Configuration.GetConnectionString("DbHome");
-builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(connections));
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+namespace WebProject
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    public class Program
+    {
+        public static User ThisUser { get; set; }
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
 
-app.UseRouting();
 
-app.UseAuthorization();
+            string connections = builder.Configuration.GetConnectionString("DbHome");
+            builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(connections));
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+            var app = builder.Build();
 
-app.Run();
+            // Configure the HTTP request pipeline.
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.Run();
+        }
+     }
+ }

@@ -1,0 +1,11 @@
+﻿
+@model WebProject.Views.Home.RegistrationModel
+<form class="RegAuthorizathion" asp-action="Registration" method="post">
+    <h1>Регистрация</h1>
+
+    <input name="login" class="form-control" type="text" placeholder="Логин" />
+    <input name="password" class="form-control" type="text" placeholder="Пароль" />
+
+    <input class="btn btn-primary" type="submit" value="Зарегистрироваться" />
+    <a asp-action="Authorization" class="btn btn-primary mt-5">Уже зарегистрированы?</a>
+</form>
